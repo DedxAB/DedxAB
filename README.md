@@ -1,4 +1,4 @@
-# Hello, I'm `@DedxAB` - Arnab Bhoumik  👋
+# Hello, I'm `DedxAB` - Arnab Bhoumik  👋
 
 !Profile Views
 

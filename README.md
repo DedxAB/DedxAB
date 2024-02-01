@@ -1,17 +1,19 @@
-# Hello, I'm `DedxAB` - Arnab Bhoumik  👋
+# Hello, I'm Arnab Bhoumik 
 
 !Profile Views
 
-## About Me 🚀
-I'm a passionate Bachelor student from Kolkata. I love to code for fun and am deeply interested in Web Development. Apart from coding, I have a keen interest in Photography, Videography, and Filming.
+## About Me 
+I'm a passionate Bachelor student from Kolkata with a deep love for coding. I enjoy building interactive and user-friendly web applications using technologies like HTML, CSS, JavaScript, and React.js. Outside of coding, I have a keen interest in capturing moments through the lens of my mobile, whether it's still photography, videography, or even some amateur filmmaking.
 
-## 🛠️ My Skills
-- **Languages**: `Java, JavaScript`
-- **Web Development**: `Next JS`
-- **Tools**: `VS Code`
+## ️ My Skills
+- **Languages:** HTML, CSS, JavaScript, React.js(Next JS), Java
+- **Web Development:** Frontend development
+- **Tools:** Visual Studio Code, Git
 
-## 📫 How to reach me
-You can reach out to me on LinkedIn, or send me an email at `arnab.officialcorp@gmail.com`.
+##  How to reach me
+You can send me an email at `arnab.bhoumik@gmail.com`.
 
 ## ⚡ Fun fact
-I love to capture moments through the lens of my camera when I'm not coding.
+When I'm not coding, I love exploring my city with my camera. Check out some of my photography on my IG.
+
+**Current Project:** I'm currently working on a Food webapp. 

@@ -6,8 +6,7 @@
 I'm a passionate Bachelor student from Kolkata with a love for coding. I enjoy building interactive and user-friendly web applications using technologies like HTML, CSS, JavaScript, and React.js. Outside of coding, I have a keen interest in capturing moments through the lens of my mobile, whether it's still photography, videography, or even some amateur filmmaking.
 
 ## ️ My Skills
-- **Languages:** HTML, CSS, JavaScript, React.js(Next JS), Java
-- **Web Development:** Frontend development
+- **Languages & Web Technologies:** HTML, CSS, JavaScript, React.js(Next JS), Java
 - **Tools:** Visual Studio Code, Git
 
 ##  How to reach me

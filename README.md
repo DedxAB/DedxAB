@@ -5,7 +5,7 @@
 ## 🎓👨‍💻 About Me
 I'm a passionate Bachelor student from Kolkata with a love for coding 💻. Outside of coding, I have a keen interest in capturing moments through the lens of my mobile 📸.
 
-**Current Project:** I'm currently working on a Food webapp 🍔🌮🍕.
+**Current Project:** I'm currently working on a *Food webapp* 🍔🌮🍕.
 
 ## 🚀 Skills
 - **Languages & Web Technologies:** HTML, Tailwind CSS, JavaScript, React.js (Next JS), Java

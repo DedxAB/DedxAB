@@ -12,7 +12,7 @@ I'm a passionate Bachelor student from Kolkata with a love for coding 💻. Outs
 - **Tools:** Visual Studio Code, Git
 
 ## 📫 How to reach me
-You can send me an email at `arnab.officialcorp@gmail.com`.
+You can send me an email at `arnab.officialcorp@gmail.com`
 
 ## ⚡📸 Fun fact
-When I'm not coding, I love exploring my city with my camera. Check out some of my photography on my IG 🌇🌆.
+When I'm not coding, I love exploring my city with my camera. Check out some of my photography on my [IG](https://www.instagram.com/sumit_ig09/) 🌇🌆.

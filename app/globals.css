@@ -1,0 +1,152 @@
+:root {
+  --font-display: var(--font-display-light);
+  --background: 220 20% 98%;
+  --foreground: 220 26% 12%;
+  --card: 220 24% 100%;
+  --card-foreground: 220 26% 12%;
+  --border: 218 22% 84%;
+  --muted: 220 18% 94%;
+  --muted-foreground: 220 10% 40%;
+  --primary: 214 82% 56%;
+  --primary-foreground: 220 24% 98%;
+  --accent: 216 16% 46%;
+  --accent-foreground: 220 24% 98%;
+  --neon-cyan: 218 70% 42%;
+  --neon-green: 219 18% 24%;
+  --neon-amber: 224 20% 34%;
+}
+
+.dark {
+  --font-display: var(--font-display-dark);
+  --background: 220 14% 6%;
+  --foreground: 220 16% 92%;
+  --card: 222 13% 10%;
+  --card-foreground: 220 16% 92%;
+  --border: 219 12% 24%;
+  --muted: 223 10% 14%;
+  --muted-foreground: 218 10% 68%;
+  --primary: 214 84% 78%;
+  --primary-foreground: 223 26% 12%;
+  --accent: 216 14% 78%;
+  --accent-foreground: 223 26% 12%;
+  --neon-cyan: 214 82% 78%;
+  --neon-green: 216 22% 86%;
+  --neon-amber: 218 18% 72%;
+}
+
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+@import "../styles/retro.css";
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(circle at 50% -20%, rgba(83, 101, 157, 0.08), transparent 42%),
+    repeating-linear-gradient(
+      to right,
+      rgba(35, 46, 72, 0.08) 0,
+      rgba(35, 46, 72, 0.08) 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(35, 46, 72, 0.07) 0,
+      rgba(35, 46, 72, 0.07) 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 45%, #eef2f7 100%);
+  background-attachment: fixed;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.08), transparent 40%),
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.06) 0,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 64px
+    ),
+    linear-gradient(180deg, #050506 0%, #090a0d 45%, #050506 100%);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.terminal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--neon-cyan)) hsl(var(--muted));
+}
+
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-left: 1px solid hsl(var(--border));
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--neon-cyan));
+  border: 2px solid hsl(var(--muted));
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(53, 96, 180, 0.28);
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 12px rgba(53, 96, 180, 0.4);
+}
+
+.dark .terminal-scrollbar {
+  scrollbar-color: #9cc9ff #0d1018;
+}
+
+.dark .terminal-scrollbar::-webkit-scrollbar-track {
+  background: #0d1018;
+  border-left: 1px solid rgba(156, 201, 255, 0.2);
+}
+
+.dark .terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9cc9ff 0%, #d9dde5 100%);
+  border: 2px solid #0d1018;
+  box-shadow: 0 0 8px rgba(156, 201, 255, 0.35);
+}
+
+.dark .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 12px rgba(156, 201, 255, 0.5);
+}

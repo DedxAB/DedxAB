@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#050A16"/>
+  <rect x="36" y="36" width="1128" height="558" rx="24" stroke="#4CF7FF" stroke-width="2" fill="#0A142A"/>
+  <text x="90" y="250" fill="#4CF7FF" font-size="64" font-family="monospace">Arnab Bhoumik</text>
+  <text x="90" y="320" fill="#D3F5FF" font-size="40" font-family="sans-serif">Retro-Futuristic Developer Portfolio</text>
+  <text x="90" y="390" fill="#83FF66" font-size="30" font-family="monospace">Next.js | TypeScript | Framer Motion</text>
+</svg>

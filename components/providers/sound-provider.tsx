@@ -1,6 +1,15 @@
-"use client";
+'use client';
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 
 type SoundContextValue = {
   enabled: boolean;
@@ -13,7 +22,7 @@ const SoundContext = createContext<SoundContextValue | null>(null);
 function beep(ctx: AudioContext, freq: number, duration: number): void {
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
-  osc.type = "square";
+  osc.type = 'square';
   osc.frequency.value = freq;
   gain.gain.value = 0.03;
   osc.connect(gain);
@@ -26,17 +35,26 @@ function beep(ctx: AudioContext, freq: number, duration: number): void {
   }, duration);
 }
 
-export function SoundProvider({ children }: { children: ReactNode }): React.JSX.Element {
+export function SoundProvider({
+  children,
+}: {
+  children: ReactNode;
+}): React.JSX.Element {
   const [enabled, setEnabled] = useState(false);
   const contextRef = useRef<AudioContext | null>(null);
-  const ambientRef = useRef<{ oscillators: OscillatorNode[]; gain: GainNode } | null>(null);
+  const ambientRef = useRef<{
+    oscillators: OscillatorNode[];
+    gain: GainNode;
+  } | null>(null);
 
   const getContext = useCallback((): AudioContext | null => {
-    if (typeof window === "undefined") return null;
+    if (typeof window === 'undefined') return null;
     if (contextRef.current) return contextRef.current;
 
     const AudioCtx =
-      window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      window.AudioContext ||
+      (window as typeof window & { webkitAudioContext?: typeof AudioContext })
+        .webkitAudioContext;
     if (!AudioCtx) return null;
 
     contextRef.current = new AudioCtx();
@@ -61,7 +79,7 @@ export function SoundProvider({ children }: { children: ReactNode }): React.JSX.
     const ctx = getContext();
     if (!ctx) return;
 
-    if (ctx.state === "suspended") {
+    if (ctx.state === 'suspended') {
       try {
         await ctx.resume();
       } catch {
@@ -77,8 +95,8 @@ export function SoundProvider({ children }: { children: ReactNode }): React.JSX.
 
     const oscA = ctx.createOscillator();
     const oscB = ctx.createOscillator();
-    oscA.type = "triangle";
-    oscB.type = "sine";
+    oscA.type = 'triangle';
+    oscB.type = 'sine';
     oscA.frequency.value = 110;
     oscB.frequency.value = 164.81;
     oscA.connect(gain);
@@ -88,15 +106,15 @@ export function SoundProvider({ children }: { children: ReactNode }): React.JSX.
 
     ambientRef.current = {
       oscillators: [oscA, oscB],
-      gain
+      gain,
     };
   }, [getContext]);
 
   const playClick = useCallback(() => {
-    if (!enabled || typeof window === "undefined") return;
+    if (!enabled || typeof window === 'undefined') return;
     const ctx = getContext();
     if (!ctx) return;
-    if (ctx.state === "suspended") {
+    if (ctx.state === 'suspended') {
       void ctx.resume();
     }
     void startAmbient();
@@ -125,18 +143,20 @@ export function SoundProvider({ children }: { children: ReactNode }): React.JSX.
     () => ({
       enabled,
       setEnabled,
-      playClick
+      playClick,
     }),
     [enabled, playClick]
   );
 
-  return <SoundContext.Provider value={value}>{children}</SoundContext.Provider>;
+  return (
+    <SoundContext.Provider value={value}>{children}</SoundContext.Provider>
+  );
 }
 
 export function useSound(): SoundContextValue {
   const context = useContext(SoundContext);
   if (!context) {
-    throw new Error("useSound must be used within SoundProvider");
+    throw new Error('useSound must be used within SoundProvider');
   }
   return context;
 }

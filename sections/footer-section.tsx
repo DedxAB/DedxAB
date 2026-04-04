@@ -1,5 +1,5 @@
-import { Separator } from "@/components/ui/separator";
-import { portfolioConfig } from "@/config/portfolio";
+import { Separator } from '@/components/ui/separator';
+import { portfolioConfig } from '@/config/portfolio';
 
 export function FooterSection(): React.JSX.Element {
   return (
@@ -7,8 +7,12 @@ export function FooterSection(): React.JSX.Element {
       <div className="mx-auto w-full max-w-6xl">
         <Separator className="mb-5" />
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground">
-          <p>{portfolioConfig.profile.name} - {new Date().getFullYear()}</p>
-          <p className="font-pixel text-neonCyan">Built with Next.js, TypeScript, Tailwind, Framer Motion</p>
+          <p>
+            {portfolioConfig.profile.name} - {new Date().getFullYear()}
+          </p>
+          <p className="font-pixel text-neonCyan">
+            Built with Next.js, TypeScript, Tailwind, Framer Motion
+          </p>
         </div>
       </div>
     </footer>

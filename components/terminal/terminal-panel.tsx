@@ -1,25 +1,30 @@
-"use client";
+'use client';
 
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
-import { portfolioConfig } from "@/config/portfolio";
-import { Card } from "@/components/ui/card";
-import { useSound } from "@/components/providers/sound-provider";
+import { portfolioConfig } from '@/config/portfolio';
+import { Card } from '@/components/ui/card';
+import { useSound } from '@/components/providers/sound-provider';
 
 type Line = {
   id: string;
   text: string;
-  type: "input" | "output" | "error";
+  type: 'input' | 'output' | 'error';
 };
 
 export function TerminalPanel(): React.JSX.Element {
   const { playClick } = useSound();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const outputRef = useRef<HTMLDivElement | null>(null);
 
   const welcomeLines = useMemo<Line[]>(
-    () => portfolioConfig.terminal.welcome.map((text, index) => ({ id: `welcome-${index}`, text, type: "output" })),
+    () =>
+      portfolioConfig.terminal.welcome.map((text, index) => ({
+        id: `welcome-${index}`,
+        text,
+        type: 'output',
+      })),
     []
   );
   const [lines, setLines] = useState<Line[]>(welcomeLines);
@@ -32,30 +37,42 @@ export function TerminalPanel(): React.JSX.Element {
     if (!command) return;
     playClick();
 
-    const nextLines: Line[] = [{ id: crypto.randomUUID(), text: `$ ${command}`, type: "input" }];
+    const nextLines: Line[] = [
+      { id: crypto.randomUUID(), text: `$ ${command}`, type: 'input' },
+    ];
 
-    if (command === "clear") {
+    if (command === 'clear') {
       setLines([]);
-      setValue("");
+      setValue('');
       return;
     }
 
     const match = commands[command];
     if (!match) {
-      nextLines.push({ id: crypto.randomUUID(), text: "Unknown command. Try 'help'.", type: "error" });
+      nextLines.push({
+        id: crypto.randomUUID(),
+        text: "Unknown command. Try 'help'.",
+        type: 'error',
+      });
     } else {
-      nextLines.push(...match.output.map((text) => ({ id: crypto.randomUUID(), text, type: "output" as const })));
+      nextLines.push(
+        ...match.output.map((text) => ({
+          id: crypto.randomUUID(),
+          text,
+          type: 'output' as const,
+        }))
+      );
     }
 
     setLines((prev) => [...prev, ...nextLines]);
-    setValue("");
+    setValue('');
   };
 
   useEffect(() => {
     if (!outputRef.current) return;
     outputRef.current.scrollTo({
       top: outputRef.current.scrollHeight,
-      behavior: "smooth"
+      behavior: 'smooth',
     });
   }, [lines]);
 
@@ -63,7 +80,9 @@ export function TerminalPanel(): React.JSX.Element {
     <Card className="border-border/80 bg-card/95 dark:border-neonGreen/35 dark:bg-[#0c1018]/85">
       <div className="mb-3 flex items-center justify-between">
         <p className="font-pixel text-neonCyan">TERMINAL MODE</p>
-        <p className="font-pixel text-xs text-muted-foreground dark:text-neonGreen/80">commands: {Object.keys(commands).join(" / ")}</p>
+        <p className="font-pixel text-xs text-muted-foreground dark:text-neonGreen/80">
+          commands: {Object.keys(commands).join(' / ')}
+        </p>
       </div>
 
       <motion.div
@@ -74,11 +93,11 @@ export function TerminalPanel(): React.JSX.Element {
           <p
             key={line.id}
             className={
-              line.type === "input"
-                ? "text-neonCyan"
-                : line.type === "error"
-                  ? "text-red-400"
-                  : "text-neonGreen"
+              line.type === 'input'
+                ? 'text-neonCyan'
+                : line.type === 'error'
+                ? 'text-red-400'
+                : 'text-neonGreen'
             }
           >
             {line.text}

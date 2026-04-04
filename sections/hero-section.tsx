@@ -196,7 +196,7 @@ export function HeroSection(): React.JSX.Element {
               </p>
             </div>
           </div>
-          <div className="grid gap-x-8 gap-y-1 text-sm sm:grid-cols-2">
+          <div className="grid gap-x-8 gap-y-2.5 text-sm sm:grid-cols-2">
             <dl className="space-y-2.5">
               {leftRows.map((item) => (
                 <div key={item.key} className="flex items-center gap-3">

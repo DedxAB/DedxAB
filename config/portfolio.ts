@@ -1,20 +1,23 @@
 import type { PortfolioConfig } from "@/lib/types";
+import { PORTFOLIO_LIVE_URL } from "@/config/site";
 
 export const portfolioConfig: PortfolioConfig = {
   seo: {
-    siteTitle: "Arnab Bhoumik | Portfolio",
+    siteTitle: "Arnab Bhoumik | R&D Full Stack Engineer",
     titleTemplate: "%s | Arnab Bhoumik",
     description:
-      "Retro-futuristic portfolio of Arnab Bhoumik, featuring full-stack projects, frontend craftsmanship, and product-minded engineering.",
-    url: "https://example.vercel.app",
+      "Portfolio of Arnab Bhoumik, R&D Full Stack Engineer with 2+ years of experience building scalable React and Next.js applications for enterprise and client products.",
+    url: PORTFOLIO_LIVE_URL,
     ogImage: "/og-image.svg",
     keywords: [
       "Arnab Bhoumik",
-      "Next.js Portfolio",
-      "Frontend Developer",
-      "TypeScript",
-      "React",
-      "Full Stack Developer"
+      "R&D Full Stack Engineer",
+      "React Developer",
+      "Next.js Developer",
+      "TypeScript Portfolio",
+      "Frontend Engineer",
+      "Software Engineer Portfolio",
+      "Kolkata Developer"
     ]
   },
   profile: {
@@ -247,7 +250,7 @@ export const portfolioConfig: PortfolioConfig = {
       name: "YuviPep CRM",
       summary: "High-traffic CRM frontend with ticket/user management and GraphQL-powered workflows.",
       stack: ["React.js", "Tailwind CSS", "GraphQL", "Context API"],
-      href: "https://example.com/yuvipep-crm",
+      href: `${PORTFOLIO_LIVE_URL}/#projects`,
       highlights: [
         "Built key user-facing CRM modules for ticket and user management.",
         "Integrated optimized GraphQL queries and mutations for efficient data exchange.",
@@ -258,7 +261,7 @@ export const portfolioConfig: PortfolioConfig = {
       name: "Zebra Technologies - GenAI Platform",
       summary: "Enterprise GenAI frontend experience focused on responsiveness, accessibility, and performance.",
       stack: ["React.js", "JavaScript", "SCSS", "Axios", "Redux"],
-      href: "https://example.com/zebra-genai",
+      href: `${PORTFOLIO_LIVE_URL}/#projects`,
       highlights: [
         "Implemented dynamic UI components aligned to agile sprint goals.",
         "Optimized rendering and load performance with lazy loading and memoization.",
@@ -297,7 +300,7 @@ export const portfolioConfig: PortfolioConfig = {
   socialLinks: [
     { label: "GitHub", href: "https://github.com/dedxab" },
     { label: "LinkedIn", href: "https://in.linkedin.com/in/arnab-bhoumik" },
-    { label: "Twitter", href: "https://x.com/sumit_x09" },
+    { label: "X", href: "https://x.com/sumit_x09" },
     { label: "Instagram", href: "https://www.instagram.com/sumit_ig09/" }
   ],
   terminal: {

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { PORTFOLIO_LIVE_URL } from "@/config/site";
 
 type BootLog = {
   text: string;
@@ -17,7 +18,7 @@ const bootLogs: BootLog[] = [
   { text: "found 0 vulnerabilities", tone: "success" },
   { text: "deploy@vm-prod:/var/www/portfolio-shell$ npm run build && pm2 restart portfolio-shell", tone: "meta" },
   { text: "[ok] build complete | service restarted", tone: "success" },
-  { text: "Production endpoint: https://arnab-portfolio.dev", tone: "success" }
+  { text: `Production endpoint: ${PORTFOLIO_LIVE_URL}`, tone: "success" }
 ];
 
 export function BootSequence({ onDone }: { onDone: () => void }): React.JSX.Element {

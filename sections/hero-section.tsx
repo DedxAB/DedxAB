@@ -71,7 +71,7 @@ export function HeroSection(): React.JSX.Element {
               onError={() => setAvatarSrc("/avatar.svg")}
             />
             <div>
-              <p className="font-pixel text-neonCyan">{portfolioConfig.profile.name}</p>
+              <p className="font-pixel text-neonCyan text-xl">{portfolioConfig.profile.name}</p>
               <p className="text-xs text-muted-foreground">{portfolioConfig.profile.role}</p>
             </div>
           </div>

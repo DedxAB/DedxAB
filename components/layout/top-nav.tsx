@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import { Github, Instagram, Linkedin, Moon, Sun, Twitter, Volume2, VolumeX } from "lucide-react";
+import { Github, Instagram, Linkedin, Moon, Sun, Volume2, VolumeX } from "lucide-react";
+import { SiX } from "react-icons/si";
 
 import { portfolioConfig } from "@/config/portfolio";
 import { useSound } from "@/components/providers/sound-provider";
@@ -11,7 +12,7 @@ import { Switch } from "@/components/ui/switch";
 const iconMap: Record<string, React.JSX.Element> = {
   GitHub: <Github className="h-4 w-4" />,
   LinkedIn: <Linkedin className="h-4 w-4" />,
-  Twitter: <Twitter className="h-4 w-4" />,
+  X: <SiX className="h-4 w-4" />,
   Instagram: <Instagram className="h-4 w-4" />
 };
 

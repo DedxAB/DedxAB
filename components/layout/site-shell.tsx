@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { BootSequence } from "@/components/effects/boot-sequence";
 import { CrtOverlay } from "@/components/effects/crt-overlay";
+import { CursorGlow } from "@/components/effects/cursor-glow";
 import { EasterEgg } from "@/components/effects/easter-egg";
 import { TopNav } from "@/components/layout/top-nav";
 import { SoundProvider } from "@/components/providers/sound-provider";
@@ -21,6 +22,7 @@ export function SiteShell({ children }: SiteShellProps): React.JSX.Element {
     <ThemeProvider>
       <SoundProvider>
         <AnimatePresence>{!ready ? <BootSequence onDone={() => setReady(true)} /> : null}</AnimatePresence>
+        <CursorGlow />
         <CrtOverlay />
         <EasterEgg />
         <TopNav />

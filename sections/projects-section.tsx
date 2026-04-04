@@ -92,7 +92,13 @@ export function ProjectsSection(): React.JSX.Element {
 
               <ul className="mt-4 flex-1 space-y-2 text-sm text-muted-foreground">
                 {project.highlights.map((highlight) => (
-                  <li key={highlight}>- {highlight}</li>
+                  <li key={highlight} className="flex items-start gap-2">
+                    <span
+                      aria-hidden="true"
+                      className="mt-[6px] inline-block h-2 w-2 shrink-0 rounded-full bg-neonCyan ring-1 ring-neonCyan/30"
+                    />
+                    <span>{highlight}</span>
+                  </li>
                 ))}
               </ul>
 

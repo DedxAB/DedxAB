@@ -1,4 +1,5 @@
-import { CalendarClock, Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { CalendarClock, Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { SiX } from "react-icons/si";
 
 import { SectionShell } from "@/components/common/section-shell";
 import { TerminalPanel } from "@/components/terminal/terminal-panel";
@@ -10,13 +11,13 @@ export function ContactSection(): React.JSX.Element {
   const socialIconMap: Record<string, React.JSX.Element> = {
     GitHub: <Github className="h-4 w-4" />,
     LinkedIn: <Linkedin className="h-4 w-4" />,
-    Twitter: <Twitter className="h-4 w-4" />,
+    X: <SiX className="h-4 w-4" />,
     Instagram: <Instagram className="h-4 w-4" />
   };
   const socialStyleMap: Record<string, string> = {
     GitHub: "border-slate-500/45 bg-slate-500/10 text-slate-700 dark:text-slate-300 hover:border-slate-400/70",
     LinkedIn: "border-blue-500/45 bg-blue-500/10 text-blue-700 dark:text-blue-300 hover:border-blue-400/70",
-    Twitter: "border-cyan-500/45 bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 hover:border-cyan-400/70",
+    X: "border-cyan-500/45 bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 hover:border-cyan-400/70",
     Instagram: "border-pink-500/45 bg-pink-500/10 text-pink-700 dark:text-pink-300 hover:border-pink-400/70"
   };
 

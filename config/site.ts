@@ -1,1 +1,1 @@
-export const PORTFOLIO_LIVE_URL = "https://dedxab.vercel.app";
+export const PORTFOLIO_LIVE_URL = 'https://dedxab.vercel.app';

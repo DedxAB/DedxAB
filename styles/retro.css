@@ -1,6 +1,6 @@
 .crt-overlay::before,
 .crt-overlay::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
 }
@@ -16,10 +16,7 @@
 }
 
 .crt-overlay::after {
-  background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.18) 50%
-  );
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.18) 50%);
   background-size: 100% 4px;
   mix-blend-mode: screen;
   animation: flicker 6s infinite;

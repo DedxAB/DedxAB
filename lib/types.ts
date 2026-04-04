@@ -49,7 +49,7 @@ export type Achievement = {
 
 export type LearningItem = {
   title: string;
-  kind: "ai" | "ml" | "engineering" | "language";
+  kind: 'ai' | 'ml' | 'engineering' | 'language';
   status: string;
   description: string;
 };

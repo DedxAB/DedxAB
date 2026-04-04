@@ -50,7 +50,7 @@ export function TimelineList({ items }: TimelineListProps): React.JSX.Element {
                 delay: Math.min(index * 0.06, 0.24),
               }}
             >
-              <div className="relative flex justify-center pt-5">
+              <div className="relative flex justify-center">
                 <motion.span
                   aria-hidden="true"
                   className="z-1 inline-flex h-4 w-4 items-center justify-center rounded-full border border-neonCyan/80 bg-background shadow-[0_0_0_3px_hsl(var(--card))]"
@@ -66,7 +66,7 @@ export function TimelineList({ items }: TimelineListProps): React.JSX.Element {
                 {index !== items.length - 1 ? (
                   <span
                     aria-hidden="true"
-                    className="absolute left-1/2 top-9 w-px -translate-x-1/2 overflow-hidden"
+                    className="absolute left-1/2 top-2 w-px -translate-x-1/2 overflow-hidden"
                     style={{ height: 'calc(100% + 1.25rem)' }}
                   >
                     <span className="absolute inset-0 bg-border/80" />

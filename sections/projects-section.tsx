@@ -140,7 +140,7 @@ export function ProjectsSection(): React.JSX.Element {
                   <li key={highlight} className="flex items-start gap-2">
                     <span
                       aria-hidden="true"
-                      className="mt-1.6 inline-block h-2 w-2 shrink-0 rounded-full bg-neonCyan ring-1 ring-neonCyan/30"
+                      className="mt-2 inline-block h-2 w-2 shrink-0 rounded-full bg-neonCyan ring-1 ring-neonCyan/30"
                     />
                     <span>{highlight}</span>
                   </li>

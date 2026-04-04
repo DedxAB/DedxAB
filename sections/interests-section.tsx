@@ -43,16 +43,18 @@ export function InterestsSection(): React.JSX.Element {
           return (
             <Card
               key={interest}
-              className={cn(
-                'group border-border/80 bg-card/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-neonCyan/40',
-                accent
-              )}
+              className="group border-border/80 bg-card/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-neonCyan/40"
             >
               <div className="flex items-start gap-3">
-                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-current/35 bg-background/70">
+                <span
+                  className={cn(
+                    'inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border bg-background/70',
+                    accent
+                  )}
+                >
                   <Icon className="h-4 w-4" />
                 </span>
-                <p className="font-display text-sm leading-relaxed">
+                <p className="font-display text-sm leading-relaxed text-foreground">
                   {interest}
                 </p>
               </div>

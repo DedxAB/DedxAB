@@ -2,24 +2,94 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Clock3, Globe, Mail, MapPin, UserRound } from 'lucide-react';
 
 import { portfolioConfig } from '@/config/portfolio';
+import { PORTFOLIO_LIVE_URL } from '@/config/site';
 import { Button } from '@/components/ui/button';
 
 export function HeroSection(): React.JSX.Element {
-  const {
-    greeting,
-    tagline,
-    rotatingLines,
-    ctaPrimary,
-    ctaSecondary,
-    systemStats,
-  } = portfolioConfig.hero;
+  const { greeting, tagline, rotatingLines, ctaPrimary, ctaSecondary } =
+    portfolioConfig.hero;
   const [lineIndex, setLineIndex] = useState(0);
   const [typed, setTyped] = useState('');
   const [avatarSrc, setAvatarSrc] = useState(
     portfolioConfig.profile.avatar || '/avatar.svg'
   );
+  const indiaTimeFormatter = useMemo(
+    () =>
+      new Intl.DateTimeFormat('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      }),
+    []
+  );
+  const [indiaTime, setIndiaTime] = useState(() =>
+    indiaTimeFormatter.format(new Date())
+  );
+  const siteHost = useMemo(() => {
+    try {
+      return new URL(PORTFOLIO_LIVE_URL).host;
+    } catch {
+      return PORTFOLIO_LIVE_URL;
+    }
+  }, []);
+  const currentTelavergeRole = useMemo(() => {
+    const currentRole = portfolioConfig.experience.find(
+      (item) =>
+        item.subtitle.toLowerCase().includes('telaverge') &&
+        item.period.toLowerCase().includes('present')
+    );
+
+    return (
+      currentRole ?? {
+        title: 'Software Engineer - R&D',
+        subtitle: 'Telaverge Communications',
+        period: 'Present',
+        location: 'Bengaluru, Karnataka, India',
+        description: '',
+      }
+    );
+  }, []);
+  const locationLabel = useMemo(
+    () =>
+      currentTelavergeRole.location?.toLowerCase().includes('bengaluru')
+        ? 'Bengaluru, India'
+        : currentTelavergeRole.location || 'Bengaluru, India',
+    [currentTelavergeRole]
+  );
+  const locationMapUrl = useMemo(
+    () =>
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        locationLabel
+      )}`,
+    [locationLabel]
+  );
+  const profileRows = useMemo(
+    () => [
+      {
+        key: 'location',
+        icon: MapPin,
+        value: locationLabel,
+        href: locationMapUrl,
+      },
+      { key: 'site', icon: Globe, value: siteHost, href: PORTFOLIO_LIVE_URL },
+      {
+        key: 'email',
+        icon: Mail,
+        value: portfolioConfig.profile.email,
+        href: `mailto:${portfolioConfig.profile.email}`,
+      },
+      { key: 'time', icon: Clock3, value: `${indiaTime} IST` },
+      { key: 'pronouns', icon: UserRound, value: 'he/him' },
+    ],
+    [indiaTime, locationLabel, locationMapUrl, siteHost]
+  );
+  const leftRows = profileRows.slice(0, 3);
+  const rightRows = profileRows.slice(3);
 
   const currentLine = useMemo(
     () => rotatingLines[lineIndex],
@@ -43,6 +113,16 @@ export function HeroSection(): React.JSX.Element {
 
     return () => window.clearInterval(timer);
   }, [currentLine, rotatingLines.length]);
+
+  useEffect(() => {
+    const updateIndiaTime = () => {
+      setIndiaTime(indiaTimeFormatter.format(new Date()));
+    };
+
+    updateIndiaTime();
+    const timer = window.setInterval(updateIndiaTime, 1000);
+    return () => window.clearInterval(timer);
+  }, [indiaTimeFormatter]);
 
   return (
     <section
@@ -96,13 +176,9 @@ export function HeroSection(): React.JSX.Element {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.15, duration: 0.6 }}
-          className="relative overflow-hidden rounded-2xl border border-neonCyan/40 bg-card/80 p-6 shadow-panel"
+          className="rounded-2xl border border-border/70 bg-card/90 p-5 shadow-panel"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-linear-to-b from-neonCyan/20 to-transparent"
-          />
-          <div className="mb-4 flex items-center gap-3">
+          <div className="mb-5 flex items-center gap-3">
             <img
               src={avatarSrc}
               alt={`${portfolioConfig.profile.name} avatar`}
@@ -115,29 +191,59 @@ export function HeroSection(): React.JSX.Element {
               <p className="font-pixel text-neonCyan text-xl">
                 {portfolioConfig.profile.name}
               </p>
-              <p className="text-xs text-muted-foreground">
-                {portfolioConfig.profile.role}
+              <p className="text-xs text-muted-foreground/90">
+                {portfolioConfig.profile.role} @ Telaverge Communications
               </p>
             </div>
           </div>
-          <p className="font-pixel text-neonCyan">SYSTEM STATUS</p>
-          <dl className="mt-4 space-y-2 text-sm">
-            {systemStats.map((item, index) => (
-              <div
-                key={item.label}
-                className="flex items-center justify-between rounded-md border border-neonCyan/20 bg-background/35 px-3 py-2"
-              >
-                <dt className="text-muted-foreground">{item.label}</dt>
-                <dd
-                  className={
-                    index === 0 ? 'font-pixel text-neonCyan' : 'font-medium'
-                  }
-                >
-                  {item.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <div className="grid gap-x-8 gap-y-1 text-sm sm:grid-cols-2">
+            <dl className="space-y-2.5">
+              {leftRows.map((item) => (
+                <div key={item.key} className="flex items-center gap-3">
+                  <dt className="inline-flex h-6 w-6 items-center justify-center rounded-lg border border-border/70 bg-background/60 text-muted-foreground shrink-0">
+                    <item.icon className="h-4 w-4" />
+                  </dt>
+                  <dd className="font-medium text-foreground/90 wrap-break-word">
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="no-underline underline-offset-3 decoration-1 transition-colors hover:text-neonCyan hover:underline"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      item.value
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <dl className="space-y-2.5">
+              {rightRows.map((item) => (
+                <div key={item.key} className="flex items-center gap-3">
+                  <dt className="inline-flex h-6 w-6 items-center justify-center rounded-lg border border-border/70 bg-background/60 text-muted-foreground shrink-0">
+                    <item.icon className="h-4 w-4" />
+                  </dt>
+                  <dd className="font-medium text-foreground/90 wrap-break-word">
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="no-underline underline-offset-3 decoration-1 transition-colors hover:text-neonCyan hover:underline"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      item.value
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </motion.aside>
       </div>
     </section>

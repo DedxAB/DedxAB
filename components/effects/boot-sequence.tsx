@@ -59,10 +59,10 @@ export function BootSequence({
   }, [index, dots]);
 
   const toneClass = (tone: BootLog['tone']): string => {
-    if (tone === 'success') return 'text-neonGreen';
-    if (tone === 'warn') return 'text-neonAmber';
-    if (tone === 'meta') return 'text-neonCyan';
-    return 'text-foreground';
+    if (tone === 'success') return 'text-[#8ee48e]';
+    if (tone === 'warn') return 'text-[#f5c16c]';
+    if (tone === 'meta') return 'text-[#7dd3fc]';
+    return 'text-[#e6e6e6]';
   };
 
   return (
@@ -72,18 +72,23 @@ export function BootSequence({
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div className="w-[min(92vw,760px)] rounded-xl border border-neonCyan/35 bg-card/90 p-5 shadow-neon">
-          <div className="mb-3 flex items-center justify-between border-b border-border/70 pb-2">
-            <p className="font-pixel text-sm text-neonCyan">
-              portfolio-shell installer v2.6.0
+        <div className="w-[min(92vw,760px)] overflow-hidden rounded-2xl border border-black/25 bg-[#f6f6f7] p-0 shadow-[0_18px_45px_rgba(0,0,0,0.28)] dark:border-black/50 dark:bg-[#2a2a2c]">
+          <div className="relative flex h-11 items-center border-b border-black/10 bg-[#e9e9ec] px-4 dark:border-white/10 dark:bg-[#3a3a3d]">
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded-full bg-[#ff5f57] shadow-inner shadow-black/20" />
+              <span className="h-3 w-3 rounded-full bg-[#febc2e] shadow-inner shadow-black/20" />
+              <span className="h-3 w-3 rounded-full bg-[#28c840] shadow-inner shadow-black/20" />
+            </div>
+            <p className="pointer-events-none absolute left-1/2 -translate-x-1/2 text-xs font-medium tracking-wide text-[#4f4f52] dark:text-[#d4d4d6]">
+              zsh - installer@macbook-pro - ~
             </p>
-            <p className="font-pixel text-xs text-muted-foreground">
+            <p className="ml-auto text-xs font-medium text-[#66666a] dark:text-[#c8c8cc]">
               {Math.min(100, Math.round((index / bootLogs.length) * 100))}%
             </p>
           </div>
           <div
             ref={logRef}
-            className="terminal-scrollbar h-64 overflow-y-auto rounded border border-border bg-muted/30 p-3 font-pixel text-[15px] leading-6"
+            className="terminal-scrollbar h-64 overflow-y-auto bg-[#1e1f22] px-4 py-3 font-mono text-sm leading-6 text-[#f3f3f3]"
           >
             {bootLogs.slice(0, index).map((line, i) => (
               <p key={`${line.text}-${i}`} className={toneClass(line.tone)}>
@@ -91,7 +96,7 @@ export function BootSequence({
               </p>
             ))}
             {index < bootLogs.length && (
-              <p className="animate-pulse text-neonCyan">installing{dots}</p>
+              <p className="animate-pulse text-[#7dd3fc]">installing{dots}</p>
             )}
           </div>
         </div>

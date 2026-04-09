@@ -311,12 +311,24 @@ export const portfolioConfig: PortfolioConfig = {
     welcome: [
       'Retro Portfolio Terminal v2.6',
       "Type 'help' to list available commands.",
-      'Hint: try the classic secret code.',
+      "Try 'game' for a quick mini challenge.",
     ],
     commands: {
       help: {
         description: 'List all available commands',
-        output: ['help', 'about', 'projects', 'contact', 'social', 'clear'],
+        output: [
+          'help',
+          'about',
+          'projects',
+          'contact',
+          'social',
+          'game',
+          'answer <1-4>',
+          'hint',
+          'score',
+          'exit',
+          'clear',
+        ],
       },
       about: {
         description: 'Show profile summary',
@@ -349,6 +361,29 @@ export const portfolioConfig: PortfolioConfig = {
           'x.com/sumit_x09',
           'instagram.com/sumit_ig09',
         ],
+      },
+      game: {
+        description: 'Start portfolio observation quiz',
+        output: [
+          'Starts a quick quiz about portfolio details.',
+          "Then use: answer <1-4>, hint, score, exit.",
+        ],
+      },
+      answer: {
+        description: 'Submit answer in quiz mode',
+        output: ["Usage: answer <number> (example: 'answer 2')"],
+      },
+      hint: {
+        description: 'Get a hint for current game',
+        output: ['Shows a clue for the current question.'],
+      },
+      score: {
+        description: 'Show best game score',
+        output: ['Displays current/best score for this session.'],
+      },
+      exit: {
+        description: 'Exit current game mode',
+        output: ['Ends the active quiz without changing best score.'],
       },
     },
   },

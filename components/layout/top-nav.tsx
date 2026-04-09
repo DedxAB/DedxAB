@@ -39,10 +39,19 @@ export function TopNav(): React.JSX.Element {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between py-2.5 md:py-2">
           <a
             href="#home"
-            className="font-pixel text-neonCyan"
+            className="group inline-flex items-center gap-1 font-mono text-sm text-neonCyan md:text-base"
             onClick={playClick}
+            aria-label={portfolioConfig.profile.name}
           >
-            {portfolioConfig.profile.name}
+            <span className="text-neonAmber transition-colors group-hover:text-neonCyan">
+              &lt;
+            </span>
+            <span className="font-semibold tracking-tight">
+              {portfolioConfig.profile.name}
+            </span>
+            <span className="text-neonAmber transition-colors group-hover:text-neonCyan">
+              /&gt;
+            </span>
           </a>
 
           <nav aria-label="Main navigation" className="hidden gap-4 md:flex">

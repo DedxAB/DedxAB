@@ -27,9 +27,7 @@ export function HeroSection(): React.JSX.Element {
       }),
     []
   );
-  const [indiaTime, setIndiaTime] = useState(() =>
-    indiaTimeFormatter.format(new Date())
-  );
+  const [indiaTime, setIndiaTime] = useState('');
   const siteHost = useMemo(() => {
     try {
       return new URL(PORTFOLIO_LIVE_URL).host;
@@ -83,7 +81,11 @@ export function HeroSection(): React.JSX.Element {
         value: portfolioConfig.profile.email,
         href: `mailto:${portfolioConfig.profile.email}`,
       },
-      { key: 'time', icon: Clock3, value: `${indiaTime} IST` },
+      {
+        key: 'time',
+        icon: Clock3,
+        value: indiaTime ? `${indiaTime} IST` : '--:--:-- IST',
+      },
       { key: 'pronouns', icon: UserRound, value: 'he/him' },
     ],
     [indiaTime, locationLabel, locationMapUrl, siteHost]
@@ -157,9 +159,24 @@ export function HeroSection(): React.JSX.Element {
             {tagline}
           </p>
 
-          <div className="mt-6 min-h-8 rounded-md border border-neonAmber/30 bg-card/50 px-3 py-2 font-pixel text-base text-neonAmber md:text-lg">
-            {typed}
-            <span className="ml-1 animate-pulse">|</span>
+          <div className="mt-6 max-w-xl overflow-hidden rounded-xl border border-black/25 bg-[#f6f6f7] p-0 shadow-[0_12px_28px_rgba(0,0,0,0.22)] dark:border-black/50 dark:bg-[#2a2a2c]">
+            <div className="relative flex h-8 items-center border-b border-black/10 bg-[#e9e9ec] px-3 dark:border-white/10 dark:bg-[#3a3a3d]">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+              </div>
+              <p className="pointer-events-none absolute left-1/2 -translate-x-1/2 text-[11px] font-medium tracking-wide text-[#545458] dark:text-[#d1d1d4]">
+                zsh
+              </p>
+            </div>
+            <div className="flex min-h-10 items-center bg-[#1e1f22] px-3 py-2 font-mono text-sm text-[#e6e6e6] md:text-base">
+              <span className="mr-2 text-[#7dd3fc]">$</span>
+              <span className="truncate">
+                {typed}
+                <span className="ml-1 animate-pulse text-[#7dd3fc]">|</span>
+              </span>
+            </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">

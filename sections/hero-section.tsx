@@ -136,7 +136,7 @@ export function HeroSection(): React.JSX.Element {
   return (
     <section
       id="home"
-      className="relative px-4 pb-16 pt-10 md:px-6 md:pb-16 md:pt-14"
+      className="relative scroll-mt-24 px-4 pb-16 pt-10 md:px-6 md:pb-16 md:pt-14"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
         <motion.div

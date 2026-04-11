@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Github, Instagram, Linkedin, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SiX } from 'react-icons/si';
@@ -23,6 +23,8 @@ export function TopNav(): React.JSX.Element {
     portfolioConfig.navigation[0]?.href ?? '#home'
   );
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   const quickSocials = useMemo(
     () => portfolioConfig.socialLinks.slice(0, 4),
@@ -104,7 +106,20 @@ export function TopNav(): React.JSX.Element {
     }
 
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 12);
+      const currentScrollY = window.scrollY;
+      const nearTop = currentScrollY <= 24;
+      const delta = currentScrollY - lastScrollY.current;
+
+      setIsScrolled(currentScrollY > 12);
+      if (nearTop) {
+        setIsVisible(true);
+      } else if (delta < -8) {
+        setIsVisible(true);
+      } else if (delta > 8 && currentScrollY > 120) {
+        setIsVisible(false);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
 
     onScroll();
@@ -113,7 +128,14 @@ export function TopNav(): React.JSX.Element {
   }, []);
 
   return (
-    <GlassNavbar scrolled={isScrolled}>
+    <GlassNavbar
+      scrolled={isScrolled}
+      className={
+        isVisible
+          ? 'translate-y-0 opacity-100'
+          : 'pointer-events-none -translate-y-[115%] opacity-0'
+      }
+    >
       <motion.div
         initial={{ y: -18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

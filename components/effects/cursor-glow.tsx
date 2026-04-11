@@ -36,7 +36,7 @@ export function CursorGlow(): React.JSX.Element | null {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-1 h-70 w-70 rounded-full bg-[radial-gradient(circle,rgba(110,160,255,.26)_0%,rgba(110,160,255,.13)_32%,rgba(110,160,255,0)_72%)] blur-2xl dark:bg-[radial-gradient(circle,rgba(120,190,255,.20)_0%,rgba(120,190,255,.10)_35%,rgba(120,190,255,0)_72%)]"
+      className="cursor-glow pointer-events-none fixed left-0 top-0 z-[1] h-72 w-72 rounded-full blur-3xl"
       style={{ x: smoothX, y: smoothY }}
     />
   );

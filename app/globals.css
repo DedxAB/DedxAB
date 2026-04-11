@@ -22,22 +22,25 @@
   --terminal-chrome: #ececef;
   --terminal-border: rgba(18, 18, 20, 0.14);
   --terminal-shadow: rgba(0, 0, 0, 0.12);
-  --terminal-text: rgba(30, 30, 34, 0.92);
-  --terminal-text-strong: rgba(10, 10, 12, 0.98);
-  --terminal-text-muted: rgba(76, 76, 82, 0.74);
-  --terminal-text-accent: rgba(16, 16, 20, 0.86);
+  --terminal-text: #294436;
+  --terminal-text-strong: #193526;
+  --terminal-text-muted: #6e747d;
+  --terminal-text-accent: #2e5c45;
   --terminal-input-bg: rgba(255, 255, 255, 0.72);
   --terminal-input-border: rgba(20, 20, 24, 0.16);
   --terminal-dot-1: #ff5f57;
   --terminal-dot-2: #febc2e;
   --terminal-dot-3: #28c840;
-  --terminal-token-prompt: rgba(88, 88, 94, 0.9);
-  --terminal-token-command: rgba(12, 12, 14, 0.96);
-  --terminal-token-flag: rgba(52, 52, 58, 0.86);
-  --terminal-token-path: rgba(44, 44, 50, 0.86);
-  --terminal-token-string: rgba(68, 68, 74, 0.88);
-  --terminal-token-url: rgba(34, 34, 40, 0.9);
-  --terminal-token-number: rgba(58, 58, 62, 0.88);
+  --terminal-token-prompt: #89929b;
+  --terminal-token-command: #16181d;
+  --terminal-token-flag: #0a84ff;
+  --terminal-token-path: #158199;
+  --terminal-token-string: #d84a43;
+  --terminal-token-url: #0067d6;
+  --terminal-token-number: #8f51d1;
+  --cursor-glow-core: rgba(0, 0, 0, 0.2);
+  --cursor-glow-mid: rgba(0, 0, 0, 0.1);
+  --cursor-glow-outer: rgba(0, 0, 0, 0);
 }
 
 .dark {
@@ -64,22 +67,25 @@
   --terminal-chrome: #2a2b2e;
   --terminal-border: rgba(255, 255, 255, 0.14);
   --terminal-shadow: rgba(0, 0, 0, 0.46);
-  --terminal-text: rgba(236, 236, 236, 0.88);
-  --terminal-text-strong: rgba(255, 255, 255, 0.96);
-  --terminal-text-muted: rgba(214, 214, 214, 0.54);
-  --terminal-text-accent: rgba(255, 255, 255, 0.76);
+  --terminal-text: #b8e6c9;
+  --terminal-text-strong: #dbffea;
+  --terminal-text-muted: #8f97a1;
+  --terminal-text-accent: #94d9b0;
   --terminal-input-bg: rgba(255, 255, 255, 0.05);
   --terminal-input-border: rgba(255, 255, 255, 0.14);
   --terminal-dot-1: #ff5f57;
   --terminal-dot-2: #febc2e;
   --terminal-dot-3: #28c840;
-  --terminal-token-prompt: rgba(180, 180, 186, 0.85);
-  --terminal-token-command: rgba(255, 255, 255, 0.95);
-  --terminal-token-flag: rgba(214, 214, 220, 0.84);
-  --terminal-token-path: rgba(202, 202, 208, 0.88);
-  --terminal-token-string: rgba(188, 188, 194, 0.82);
-  --terminal-token-url: rgba(224, 224, 229, 0.88);
-  --terminal-token-number: rgba(192, 192, 198, 0.9);
+  --terminal-token-prompt: #7d8590;
+  --terminal-token-command: #f8faff;
+  --terminal-token-flag: #66b2ff;
+  --terminal-token-path: #64d2ff;
+  --terminal-token-string: #ff7b72;
+  --terminal-token-url: #4ea1ff;
+  --terminal-token-number: #d2a8ff;
+  --cursor-glow-core: rgba(255, 255, 255, 0.2);
+  --cursor-glow-mid: rgba(255, 255, 255, 0.1);
+  --cursor-glow-outer: rgba(255, 255, 255, 0);
 }
 
 @config "../tailwind.config.js";
@@ -354,4 +360,13 @@ button:disabled,
 
 .terminal-token-number {
   color: var(--terminal-token-number);
+}
+
+.cursor-glow {
+  background: radial-gradient(
+    circle,
+    var(--cursor-glow-core) 0%,
+    var(--cursor-glow-mid) 36%,
+    var(--cursor-glow-outer) 72%
+  );
 }

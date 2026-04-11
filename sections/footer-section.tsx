@@ -10,7 +10,7 @@ export function FooterSection(): React.JSX.Element {
           <p>
             {portfolioConfig.profile.name} - {new Date().getFullYear()}
           </p>
-          <p className="font-pixel text-neonCyan">
+          <p className="tracking-[0.08em]">
             Built with Next.js, TypeScript, Tailwind, Framer Motion
           </p>
         </div>

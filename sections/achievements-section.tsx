@@ -12,7 +12,7 @@ export function AchievementsSection(): React.JSX.Element {
       <div className="grid gap-5 md:grid-cols-2">
         {portfolioConfig.achievements.map((item) => (
           <Card key={item.title}>
-            <p className="font-pixel text-xs text-neonAmber">{item.year}</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{item.year}</p>
             <h3 className="mt-2 font-display text-lg">{item.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               {item.description}

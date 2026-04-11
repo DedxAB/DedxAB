@@ -32,7 +32,7 @@ export function EasterEgg(): React.JSX.Element {
     <AnimatePresence>
       {open ? (
         <motion.aside
-          className="fixed bottom-4 right-4 z-80 max-w-xs rounded-md border border-neonAmber/60 bg-card p-3 font-pixel text-sm text-neonAmber"
+          className="surface-subtle fixed bottom-4 right-4 z-80 max-w-xs rounded-md p-3 text-sm text-foreground"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}

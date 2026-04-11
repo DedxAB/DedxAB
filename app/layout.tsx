@@ -1,32 +1,28 @@
-import type { Metadata } from "next";
-import { Manrope, Sora, VT323 } from "next/font/google";
-import type { ReactNode } from "react";
+import type { Metadata, Viewport } from 'next';
+import { DM_Sans, Playfair_Display } from 'next/font/google';
+import type { ReactNode } from 'react';
 
-import "./globals.css";
+import './globals.css';
 
-import { portfolioConfig } from "@/config/portfolio";
+import { portfolioConfig } from '@/config/portfolio';
 
-const lightDisplayFont = Manrope({
+const bodyFont = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-display-light"
+  weight: ['400', '500', '700'],
+  variable: '--font-body',
 });
 
-const darkDisplayFont = Sora({
-  subsets: ["latin"],
-  variable: "--font-display-dark"
-});
-
-const pixelFont = VT323({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-pixel"
+const displayFont = Playfair_Display({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-display',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(portfolioConfig.seo.url),
   title: {
     default: portfolioConfig.seo.siteTitle,
-    template: portfolioConfig.seo.titleTemplate
+    template: portfolioConfig.seo.titleTemplate,
   },
   description: portfolioConfig.seo.description,
   keywords: portfolioConfig.seo.keywords,
@@ -36,21 +32,28 @@ export const metadata: Metadata = {
     url: portfolioConfig.seo.url,
     siteName: portfolioConfig.seo.siteTitle,
     images: [{ url: portfolioConfig.seo.ogImage, width: 1200, height: 630 }],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: portfolioConfig.seo.siteTitle,
     description: portfolioConfig.seo.description,
-    images: [portfolioConfig.seo.ogImage]
-  }
+    images: [portfolioConfig.seo.ogImage],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f7f7f7' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>): React.JSX.Element {
   return (
     <html lang="en" className="dark">
       <body
-        className={`${lightDisplayFont.variable} ${darkDisplayFont.variable} ${pixelFont.variable} bg-background font-display text-foreground antialiased`}
+        className={`${bodyFont.variable} ${displayFont.variable} bg-background font-body text-foreground antialiased`}
       >
         {children}
       </body>

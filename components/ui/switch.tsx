@@ -21,13 +21,13 @@ export function Switch({
       aria-label={label}
       onClick={() => onCheckedChange(!checked)}
       className={cn(
-        'inline-flex h-6 w-11 items-center rounded-full border transition-all duration-300',
-        checked ? 'border-neonCyan bg-neonCyan/20' : 'border-border bg-muted'
+        'toggle-switch inline-flex h-6 w-11 items-center rounded-full transition-all duration-300',
+        checked ? 'is-active' : ''
       )}
     >
       <span
         className={cn(
-          'h-4 w-4 rounded-full bg-foreground transition-transform',
+          'toggle-switch-thumb h-4 w-4 rounded-full transition-transform',
           checked ? 'translate-x-6' : 'translate-x-1'
         )}
       />

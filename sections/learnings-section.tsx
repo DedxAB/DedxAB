@@ -20,10 +20,10 @@ export function LearningsSection(): React.JSX.Element {
     >
       <div className="grid gap-4 md:grid-cols-2">
         {portfolioConfig.currentLearnings.map((item) => (
-          <Card key={item.title} className="border-border/80 bg-card/90">
+          <Card key={item.title}>
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-2">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-md border border-neonCyan/40 bg-neonCyan/10 text-neonCyan">
+                <span className="surface-subtle inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-foreground">
                   {learningIconMap[item.kind] ?? (
                     <Sparkles className="h-4 w-4" />
                   )}
@@ -32,7 +32,7 @@ export function LearningsSection(): React.JSX.Element {
                   {item.title}
                 </h3>
               </div>
-              <span className="rounded-full border border-neonAmber/35 bg-neonAmber/10 px-2 py-1 font-pixel text-xs text-neonAmber">
+              <span className="surface-subtle shrink-0 rounded-full px-2 py-1 text-xs tracking-[0.12em] text-muted-foreground">
                 {item.status}
               </span>
             </div>

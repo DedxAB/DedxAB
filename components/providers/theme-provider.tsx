@@ -2,6 +2,7 @@
 
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -43,17 +44,17 @@ export function ThemeProvider({
     applyTheme(initial);
   }, []);
 
-  const setTheme = (nextTheme: Theme): void => {
+  const setTheme = useCallback((nextTheme: Theme): void => {
     setThemeState(nextTheme);
     applyTheme(nextTheme);
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('portfolio-theme', nextTheme);
     }
-  };
+  }, []);
 
-  const toggleTheme = (): void => {
+  const toggleTheme = useCallback((): void => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+  }, [setTheme, theme]);
 
   const value = useMemo(
     () => ({
@@ -61,7 +62,7 @@ export function ThemeProvider({
       setTheme,
       toggleTheme,
     }),
-    [theme]
+    [theme, setTheme, toggleTheme]
   );
 
   return (

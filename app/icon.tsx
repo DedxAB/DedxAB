@@ -17,15 +17,16 @@ export default function Icon(): ImageResponse {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#081023",
-          color: "#4CF7FF",
-          border: "2px solid #4CF7FF",
+          background: "#0b0b0b",
+          color: "#f5f5f5",
+          border: "2px solid #f5f5f5",
           borderRadius: "10px",
-          fontSize: 28,
+          fontSize: 20,
+          letterSpacing: "-0.02em",
           fontFamily: "monospace"
         }}
       >
-        AB
+        {"</>"}
       </div>
     ),
     {

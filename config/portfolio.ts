@@ -3,8 +3,8 @@ import { PORTFOLIO_LIVE_URL } from '@/config/site';
 
 export const portfolioConfig: PortfolioConfig = {
   seo: {
-    siteTitle: 'Arnab Bhoumik | R&D Full Stack Engineer',
-    titleTemplate: '%s | Arnab Bhoumik',
+    siteTitle: '<Arnab Bhoumik />',
+    titleTemplate: '%s · <Arnab Bhoumik />',
     description:
       'Portfolio of Arnab Bhoumik, R&D Full Stack Engineer with 2+ years of experience building scalable React and Next.js applications for enterprise and client products.',
     url: PORTFOLIO_LIVE_URL,
@@ -25,7 +25,7 @@ export const portfolioConfig: PortfolioConfig = {
     role: 'Software Engineer - R&D',
     location: 'Arambagh, West Bengal, India',
     email: 'arnab.officialcorp@gmail.com',
-    bio: 'R&D Full Stack Engineer with 2+ years of experience building responsive, scalable web applications using React, Next.js, TypeScript, and modern frontend architecture.',
+    bio: 'R&D Full Stack Engineer with 1.5+ years of experience building responsive, scalable web applications using React, Next.js, TypeScript, and modern frontend architecture.',
     avatar: 'https://unavatar.io/x/sumit_x09',
   },
   navigation: [
@@ -41,12 +41,12 @@ export const portfolioConfig: PortfolioConfig = {
     { label: 'Contact', href: '#contact' },
   ],
   hero: {
-    greeting: '> booting developer profile...',
+    greeting: 'Open to impactful engineering roles',
     tagline:
       'Building secure, scalable, and user-focused web products with modern frontend engineering.',
     rotatingLines: [
-      '2+ years in Software R&D and product delivery',
-      'React, Next.js, TypeScript, Redux, and GraphQL',
+      '1.5+ years in Software R&D and product delivery',
+      'React, Next.js, TypeScript, Redux',
       'Strong in performance, maintainability, and UX quality',
     ],
     ctaPrimary: 'View Projects',
@@ -61,7 +61,7 @@ export const portfolioConfig: PortfolioConfig = {
     {
       title: 'Diploma in Computer Technology',
       subtitle: 'Contai Polytechnic',
-      period: '2018 - 2021',
+      period: 'June 2018 - Aug 2021',
       description:
         'Built core fundamentals in programming, database systems, and software basics with a practical learning approach.',
     },
@@ -73,7 +73,7 @@ export const portfolioConfig: PortfolioConfig = {
         'Expanded into full-stack development with modern web frameworks and built multiple deployable projects.',
     },
     {
-      title: 'R&D Full Stack Engineer',
+      title: 'R&D Software Engineer',
       subtitle: 'Product Engineering and Client Delivery',
       period: '2024 - Present',
       description:
@@ -82,50 +82,42 @@ export const portfolioConfig: PortfolioConfig = {
   ],
   experience: [
     {
-      title: 'Frontend Developer',
-      subtitle: 'YuviPep CRM',
-      period: 'Jun 2025 - Present',
-      location: 'India',
-      description:
-        'Engineered key CRM features including ticket and user management, integrated GraphQL queries/mutations, handled global state via Context API, and improved quality through code reviews and documentation.',
-    },
-    {
-      title: 'Software Engineer Research & Development',
-      subtitle: 'Telaverge Communications',
-      period: 'Dec 2024 - Present',
-      location: 'Bengaluru, Karnataka, India',
-      description:
-        'Working on R&D-focused software engineering initiatives and product development tasks in a production environment.',
-    },
-    {
-      title: 'Software Engineer Research & Development',
-      subtitle: 'Telaverge Communications',
-      period: 'Jun 2024 - Nov 2024',
-      location: 'Bengaluru, Karnataka, India',
-      description:
-        'Contributed to engineering deliverables as part of the R&D team and supported feature development workflows.',
-    },
-    {
-      title: 'Frontend Developer (Client Project)',
+      title: 'Fullstack Developer (Client Project)',
       subtitle: 'Zebra Technologies - GenAI Platform',
-      period: 'Aug 2024 - Jul 2025',
-      location: 'India',
+      period: 'Nov 2025 - Present',
+      location: 'Bangalore, India',
       description:
         'Built and enhanced GenAI web interfaces with React, SCSS, and Axios; improved accessibility, responsiveness, and performance using code-splitting, lazy loading, and reusable component architecture.',
     },
     {
-      title: 'Frontend Developer',
-      subtitle: 'YuviPep E-commerce Site',
-      period: 'Jun 2024 - Aug 2024',
-      location: 'India',
+      title: 'Frontend Developer (YuviPep CRM)',
+      subtitle: 'Telaverge Communication Pvt. Ltd.',
+      period: 'Jun 2025 - Oct 2025',
+      location: 'Bangalore, India',
+      description:
+        'Engineered key CRM features including ticket and user management, integrated GraphQL queries/mutations, handled global state via Context API, and improved quality through code reviews and documentation.',
+    },
+    {
+      title: 'Frontend Developer (Client Project)',
+      subtitle: 'Zebra Technologies - GenAI Platform',
+      period: 'Nov 2024 - May 2025',
+      location: 'Bangalore, India',
+      description:
+        'Built and enhanced GenAI web interfaces with React, SCSS, and Axios; improved accessibility, responsiveness, and performance using code-splitting, lazy loading, and reusable component architecture.',
+    },
+    {
+      title: 'Software Engineer Intern (YuviPep E-commerce Website)',
+      subtitle: 'Telaverge Communication Pvt. Ltd.',
+      period: 'Aug 2024 - Oct 2024',
+      location: 'Bangalore, India (Remote)',
       description:
         'Developed responsive UI with React and Bootstrap, managed async/global state with Redux Toolkit, integrated Google Analytics custom events, and fixed critical UI defects.',
     },
     {
-      title: 'Frontend Developer',
-      subtitle: 'YuviPep Website',
-      period: 'Jan 2023 - Dec 2024',
-      location: 'India',
+      title: 'Software Engineer Intern (YuviPep Website)',
+      subtitle: 'Telaverge Communication Pvt. Ltd.',
+      period: 'Jun 2024 - Dec 2024',
+      location: 'Bangalore, India (Remote)',
       description:
         'Developed and maintained production web experiences in Next.js/React with Tailwind and TypeScript, integrated APIs, and supported team collaboration and technical issue resolution.',
     },
@@ -309,7 +301,7 @@ export const portfolioConfig: PortfolioConfig = {
   ],
   terminal: {
     welcome: [
-      'Retro Portfolio Terminal v2.6',
+      'Portfolio Console',
       "Type 'help' to list available commands.",
       "Try 'game' for a quick mini challenge.",
     ],
@@ -366,7 +358,7 @@ export const portfolioConfig: PortfolioConfig = {
         description: 'Start portfolio observation quiz',
         output: [
           'Starts a quick quiz about portfolio details.',
-          "Then use: answer <1-4>, hint, score, exit.",
+          'Then use: answer <1-4>, hint, score, exit.',
         ],
       },
       answer: {

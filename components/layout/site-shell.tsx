@@ -1,14 +1,11 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { type ReactNode, useCallback, useState } from 'react';
+import { motion } from 'framer-motion';
 
+import { easing } from '@/components/common/motion';
 import { BootSequence } from '@/components/effects/boot-sequence';
-import { CrtOverlay } from '@/components/effects/crt-overlay';
-import { CursorGlow } from '@/components/effects/cursor-glow';
-import { EasterEgg } from '@/components/effects/easter-egg';
 import { TopNav } from '@/components/layout/top-nav';
-import { SoundProvider } from '@/components/providers/sound-provider';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 
 type SiteShellProps = {
@@ -16,27 +13,25 @@ type SiteShellProps = {
 };
 
 export function SiteShell({ children }: SiteShellProps): React.JSX.Element {
-  const [ready, setReady] = useState(false);
+  const [bootDone, setBootDone] = useState(false);
+  const onBootDone = useCallback(() => {
+    setBootDone(true);
+  }, []);
 
   return (
     <ThemeProvider>
-      <SoundProvider>
-        <AnimatePresence>
-          {!ready ? <BootSequence onDone={() => setReady(true)} /> : null}
-        </AnimatePresence>
-        <CursorGlow />
-        <CrtOverlay />
-        <EasterEgg />
+      <div className="relative">
+        {!bootDone ? <BootSequence onDone={onBootDone} /> : null}
         <TopNav />
         <motion.main
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: ready ? 1 : 0, y: ready ? 0 : 12 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: bootDone ? 1 : 0, y: bootDone ? 0 : 18 }}
+          transition={{ duration: 0.6, ease: easing }}
           className="relative z-10"
         >
           {children}
         </motion.main>
-      </SoundProvider>
+      </div>
     </ThemeProvider>
   );
 }

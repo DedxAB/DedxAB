@@ -1,6 +1,6 @@
 'use client';
 
-import { CalendarClock, Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import { CalendarClock, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SiX } from 'react-icons/si';
 
@@ -15,7 +15,6 @@ export function ContactSection(): React.JSX.Element {
     GitHub: <Github className="h-4 w-4" />,
     LinkedIn: <Linkedin className="h-4 w-4" />,
     X: <SiX className="h-4 w-4" />,
-    Instagram: <Instagram className="h-4 w-4" />,
   };
 
   return (

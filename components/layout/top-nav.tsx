@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Github, Instagram, Linkedin, Moon, Sun } from 'lucide-react';
+import { Github, Linkedin, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SiX } from 'react-icons/si';
 
@@ -14,7 +14,6 @@ const iconMap: Record<string, React.JSX.Element> = {
   GitHub: <Github className="h-4 w-4" />,
   LinkedIn: <Linkedin className="h-4 w-4" />,
   X: <SiX className="h-4 w-4" />,
-  Instagram: <Instagram className="h-4 w-4" />,
 };
 
 export function TopNav(): React.JSX.Element {
@@ -183,7 +182,7 @@ export function TopNav(): React.JSX.Element {
           </div>
 
           <div className="mt-3">
-            <div className="header-nav-surface mx-auto w-full max-w-fit overflow-x-auto rounded-full px-4 py-2">
+            <div className="header-nav-surface hide-scrollbar mx-auto w-full max-w-fit overflow-x-auto rounded-full px-4 py-2">
               <nav
                 aria-label="Main navigation"
                 className="flex min-w-max items-center gap-6"

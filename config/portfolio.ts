@@ -297,7 +297,6 @@ export const portfolioConfig: PortfolioConfig = {
     { label: 'GitHub', href: 'https://github.com/dedxab' },
     { label: 'LinkedIn', href: 'https://in.linkedin.com/in/arnab-bhoumik' },
     { label: 'X', href: 'https://x.com/sumit_x09' },
-    { label: 'Instagram', href: 'https://www.instagram.com/sumit_ig09/' },
   ],
   terminal: {
     welcome: [
@@ -351,7 +350,6 @@ export const portfolioConfig: PortfolioConfig = {
           'github.com/dedxab',
           'in.linkedin.com/in/arnab-bhoumik',
           'x.com/sumit_x09',
-          'instagram.com/sumit_ig09',
         ],
       },
       game: {

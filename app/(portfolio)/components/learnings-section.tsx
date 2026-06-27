@@ -1,8 +1,8 @@
-import { Brain, Bot, Cpu, Sparkles } from 'lucide-react';
-
 import { SectionShell } from '@/components/common/section-shell';
 import { Card } from '@/components/ui/card';
 import { portfolioConfig } from '@/config/portfolio';
+
+import { Bot, Brain, Cpu, Sparkles } from 'lucide-react';
 
 const learningIconMap: Record<string, React.JSX.Element> = {
   ai: <Bot className="h-4 w-4" />,

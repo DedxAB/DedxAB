@@ -1,5 +1,11 @@
 'use client';
 
+import { scaleIn, staggerContainer } from '@/components/common/motion';
+import { SectionShell } from '@/components/common/section-shell';
+import { Card } from '@/components/ui/card';
+import { portfolioConfig } from '@/config/portfolio';
+
+import { motion } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
 import {
   Braces,
@@ -11,17 +17,11 @@ import {
   FolderGit2,
   Github,
   Gitlab,
-  PanelsTopLeft,
   Palette,
+  PanelsTopLeft,
   Send,
   SquareKanban,
 } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-import { scaleIn, staggerContainer } from '@/components/common/motion';
-import { SectionShell } from '@/components/common/section-shell';
-import { Card } from '@/components/ui/card';
-import { portfolioConfig } from '@/config/portfolio';
 
 const skillIconMap: Record<string, LucideIcon> = {
   JavaScript: Braces,
@@ -86,7 +86,11 @@ export function SkillsSection(): React.JSX.Element {
                       return (
                         <span className="surface-subtle inline-flex items-center gap-2 rounded-md px-2.5 py-1.5 text-sm text-foreground transition-all duration-300 hover:brightness-[1.03]">
                           <span className="surface-subtle inline-flex h-5 min-w-5 items-center justify-center rounded px-1 text-[10px] text-muted-foreground">
-                            {Icon ? <Icon className="h-3.5 w-3.5" /> : skill.icon}
+                            {Icon ? (
+                              <Icon className="h-3.5 w-3.5" />
+                            ) : (
+                              skill.icon
+                            )}
                           </span>
                           <span>{skill.name}</span>
                         </span>

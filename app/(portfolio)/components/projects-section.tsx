@@ -1,5 +1,11 @@
 'use client';
 
+import { fadeUp, scaleIn, staggerContainer } from '@/components/common/motion';
+import { SectionShell } from '@/components/common/section-shell';
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
+import { portfolioConfig } from '@/config/portfolio';
+
 import { motion } from 'framer-motion';
 import { Braces, ExternalLink, Github } from 'lucide-react';
 import type { IconType } from 'react-icons';
@@ -15,12 +21,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
-
-import { fadeUp, scaleIn, staggerContainer } from '@/components/common/motion';
-import { SectionShell } from '@/components/common/section-shell';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import { portfolioConfig } from '@/config/portfolio';
 
 const stackIconMap: Record<string, IconType> = {
   'Next.js': SiNextdotjs,

@@ -1,9 +1,9 @@
-import type { LucideIcon } from 'lucide-react';
-import { Camera, Gamepad2, Rocket, Sparkles, Trophy } from 'lucide-react';
-
 import { SectionShell } from '@/components/common/section-shell';
 import { Card } from '@/components/ui/card';
 import { portfolioConfig } from '@/config/portfolio';
+
+import type { LucideIcon } from 'lucide-react';
+import { Camera, Gamepad2, Rocket, Sparkles, Trophy } from 'lucide-react';
 
 const iconByKeyword: { keyword: string; icon: LucideIcon }[] = [
   { keyword: 'photo', icon: Camera },
@@ -17,7 +17,7 @@ const iconByKeyword: { keyword: string; icon: LucideIcon }[] = [
 export function InterestsSection(): React.JSX.Element {
   const pickIcon = (interest: string): LucideIcon => {
     const match = iconByKeyword.find((item) =>
-      interest.toLowerCase().includes(item.keyword)
+      interest.toLowerCase().includes(item.keyword),
     );
     return match?.icon ?? Sparkles;
   };

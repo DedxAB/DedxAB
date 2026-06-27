@@ -1,14 +1,14 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Clock3, Globe, Mail, MapPin, UserRound } from 'lucide-react';
-
 import { easing } from '@/components/common/motion';
-import { portfolioConfig } from '@/config/portfolio';
-import { PORTFOLIO_LIVE_URL } from '@/config/site';
 import { renderTerminalTokens } from '@/components/terminal/terminal-highlight';
 import { Button } from '@/components/ui/button';
+import { portfolioConfig } from '@/config/portfolio';
+import { PORTFOLIO_LIVE_URL } from '@/config/site';
+
+import { motion } from 'framer-motion';
+import { Clock3, Globe, Mail, MapPin, UserRound } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 
 export function HeroSection(): React.JSX.Element {
   const { greeting, tagline, rotatingLines, ctaPrimary, ctaSecondary } =
@@ -16,7 +16,7 @@ export function HeroSection(): React.JSX.Element {
   const [lineIndex, setLineIndex] = useState(0);
   const [typed, setTyped] = useState('');
   const [avatarSrc, setAvatarSrc] = useState(
-    portfolioConfig.profile.avatar || '/avatar.svg'
+    portfolioConfig.profile.avatar || '/avatar.svg',
   );
   const indiaTimeFormatter = useMemo(
     () =>
@@ -27,7 +27,7 @@ export function HeroSection(): React.JSX.Element {
         second: '2-digit',
         hour12: true,
       }),
-    []
+    [],
   );
   const [indiaTime, setIndiaTime] = useState('');
   const siteHost = useMemo(() => {
@@ -41,7 +41,7 @@ export function HeroSection(): React.JSX.Element {
     const currentRole = portfolioConfig.experience.find(
       (item) =>
         item.subtitle.toLowerCase().includes('telaverge') &&
-        item.period.toLowerCase().includes('present')
+        item.period.toLowerCase().includes('present'),
     );
 
     return (
@@ -59,14 +59,14 @@ export function HeroSection(): React.JSX.Element {
       currentTelavergeRole.location?.toLowerCase().includes('bengaluru')
         ? 'Bengaluru, India'
         : currentTelavergeRole.location || 'Bengaluru, India',
-    [currentTelavergeRole]
+    [currentTelavergeRole],
   );
   const locationMapUrl = useMemo(
     () =>
       `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        locationLabel
+        locationLabel,
       )}`,
-    [locationLabel]
+    [locationLabel],
   );
   const profileRows = useMemo(
     () => [
@@ -90,19 +90,19 @@ export function HeroSection(): React.JSX.Element {
       },
       { key: 'pronouns', icon: UserRound, value: 'he/him' },
     ],
-    [indiaTime, locationLabel, locationMapUrl, siteHost]
+    [indiaTime, locationLabel, locationMapUrl, siteHost],
   );
   const leftRows = profileRows.slice(0, 3);
   const rightRows = profileRows.slice(3);
 
   const commandLines = useMemo(
     () => rotatingLines.map((line) => `echo "${line}"`),
-    [rotatingLines]
+    [rotatingLines],
   );
 
   const currentLine = useMemo(
     () => commandLines[lineIndex],
-    [lineIndex, commandLines]
+    [lineIndex, commandLines],
   );
 
   useEffect(() => {
@@ -115,7 +115,7 @@ export function HeroSection(): React.JSX.Element {
         window.clearInterval(timer);
         window.setTimeout(
           () => setLineIndex((prev) => (prev + 1) % commandLines.length),
-          1400
+          1400,
         );
       }
     }, 40);
@@ -177,7 +177,9 @@ export function HeroSection(): React.JSX.Element {
               <span className="terminal-token-prompt mr-2 shrink-0">$</span>
               <span className="min-w-0 flex-1 whitespace-pre-wrap break-words">
                 {renderTerminalTokens(typed, `hero-terminal-${lineIndex}`)}
-                <span className="terminal-text-accent ml-1 animate-pulse">|</span>
+                <span className="terminal-text-accent ml-1 animate-pulse">
+                  |
+                </span>
               </span>
             </div>
           </div>
@@ -208,7 +210,9 @@ export function HeroSection(): React.JSX.Element {
               onError={() => setAvatarSrc('/avatar.svg')}
             />
             <div>
-              <p className="font-display text-2xl">{portfolioConfig.profile.name}</p>
+              <p className="font-display text-2xl">
+                {portfolioConfig.profile.name}
+              </p>
               <p className="text-xs text-muted-foreground/90">
                 {portfolioConfig.profile.role} @ Telaverge Communications
               </p>

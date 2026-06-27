@@ -1,4 +1,4 @@
-import type { PortfolioConfig } from '@/lib/types';
+import type { PortfolioConfig } from '@/app/(portfolio)/types';
 import { PORTFOLIO_LIVE_URL } from '@/config/site';
 
 export const portfolioConfig: PortfolioConfig = {

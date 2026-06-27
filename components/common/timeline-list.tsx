@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { fadeUp, staggerContainer } from '@/components/common/motion';
 import { Card } from '@/components/ui/card';
-import { TimelineItem } from '@/lib/types';
+import { TimelineItem } from '@/app/(portfolio)/types';
 
 type TimelineListProps = {
   items: TimelineItem[];
@@ -45,7 +45,9 @@ export function TimelineList({ items }: TimelineListProps): React.JSX.Element {
               </span>
             </div>
             {item.location ? (
-              <p className="mt-4 text-sm text-muted-foreground">{item.location}</p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                {item.location}
+              </p>
             ) : null}
             <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground md:text-base">
               {item.description}

@@ -5,40 +5,10 @@ import { SectionShell } from '@/components/common/section-shell';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { portfolioConfig } from '@/config/portfolio';
+import { stackIconMap } from '@/config/icons';
 
 import { motion } from 'framer-motion';
 import { Braces, ExternalLink, Github } from 'lucide-react';
-import type { IconType } from 'react-icons';
-import {
-  SiAxios,
-  SiCss,
-  SiGraphql,
-  SiJavascript,
-  SiMongodb,
-  SiNextdotjs,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-  SiTypescript,
-} from 'react-icons/si';
-
-const stackIconMap: Record<string, IconType> = {
-  'Next.js': SiNextdotjs,
-  'React.js': SiReact,
-  'React (Vite)': SiReact,
-  JavaScript: SiJavascript,
-  TypeScript: SiTypescript,
-  CSS: SiCss,
-  'Tailwind CSS': SiTailwindcss,
-  GraphQL: SiGraphql,
-  'Context API': SiReact,
-  MongoDB: SiMongodb,
-  NextAuth: SiNextdotjs,
-  'Redux Toolkit': SiRedux,
-  Redux: SiRedux,
-  'TMDB API': SiReact,
-  Axios: SiAxios,
-};
 
 export function ProjectsSection(): React.JSX.Element {
   return (

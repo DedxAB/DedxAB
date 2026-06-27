@@ -97,6 +97,7 @@ export type PortfolioConfig = {
     availability: string;
     links: ContactLink[];
   };
+  resumeUrl?: string;
   socialLinks: ContactLink[];
   terminal: {
     welcome: string[];

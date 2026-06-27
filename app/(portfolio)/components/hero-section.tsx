@@ -7,7 +7,7 @@ import { portfolioConfig } from '@/config/portfolio';
 import { PORTFOLIO_LIVE_URL } from '@/config/site';
 
 import { motion } from 'framer-motion';
-import { Clock3, Globe, Mail, MapPin, UserRound } from 'lucide-react';
+import { Clock3, FileDown, Globe, Mail, MapPin, UserRound } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 
 export function HeroSection(): React.JSX.Element {
@@ -191,6 +191,14 @@ export function HeroSection(): React.JSX.Element {
             <a href="#contact">
               <Button variant="secondary">{ctaSecondary}</Button>
             </a>
+            {portfolioConfig.resumeUrl ? (
+              <a href={portfolioConfig.resumeUrl} target="_blank" rel="noreferrer">
+                <Button variant="ghost">
+                  <FileDown className="mr-2 h-4 w-4" />
+                  Resume
+                </Button>
+              </a>
+            ) : null}
           </div>
         </motion.div>
 

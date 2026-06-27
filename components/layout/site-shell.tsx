@@ -1,7 +1,7 @@
 'use client';
 
 import { type ReactNode, useCallback, useState } from 'react';
-import { motion } from 'framer-motion';
+import { MotionConfig, motion } from 'framer-motion';
 
 import { easing } from '@/components/common/motion';
 import { BootSequence } from '@/components/effects/boot-sequence';
@@ -22,20 +22,22 @@ export function SiteShell({ children }: SiteShellProps): React.JSX.Element {
 
   return (
     <ThemeProvider>
-      <div className="relative">
-        <CursorGlow />
-        {!bootDone ? <BootSequence onDone={onBootDone} /> : null}
-        <TopNav />
-        <ScrollToTopButton />
-        <motion.main
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: bootDone ? 1 : 0, y: bootDone ? 0 : 18 }}
-          transition={{ duration: 0.6, ease: easing }}
-          className="relative z-10"
-        >
-          {children}
-        </motion.main>
-      </div>
+      <MotionConfig reducedMotion="user">
+        <div className="relative">
+          <CursorGlow />
+          {!bootDone ? <BootSequence onDone={onBootDone} /> : null}
+          <TopNav />
+          <ScrollToTopButton />
+          <motion.main
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: bootDone ? 1 : 0, y: bootDone ? 0 : 18 }}
+            transition={{ duration: 0.6, ease: easing }}
+            className="relative z-10"
+          >
+            {children}
+          </motion.main>
+        </div>
+      </MotionConfig>
     </ThemeProvider>
   );
 }

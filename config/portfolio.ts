@@ -293,6 +293,7 @@ export const portfolioConfig: PortfolioConfig = {
     availability: 'Available for new opportunities in 2026.',
     links: [{ label: 'Email', href: 'mailto:arnab.officialcorp@gmail.com' }],
   },
+  resumeUrl: 'https://drive.google.com/file/d/1g-4BO_t117C5LMHcvKgTLwfvNBgBjZJy/view?usp=drivesdk',
   socialLinks: [
     { label: 'GitHub', href: 'https://github.com/dedxab' },
     { label: 'LinkedIn', href: 'https://in.linkedin.com/in/arnab-bhoumik' },

@@ -12,9 +12,9 @@ import { portfolioConfig } from '@/config/portfolio';
 
 export function ContactSection(): React.JSX.Element {
   const socialIconMap: Record<string, React.JSX.Element> = {
-    GitHub: <Github className="h-4 w-4" />,
-    LinkedIn: <Linkedin className="h-4 w-4" />,
-    X: <SiX className="h-4 w-4" />,
+    GitHub: <Github className="h-4 w-4 shrink-0" />,
+    LinkedIn: <Linkedin className="h-4 w-4 shrink-0" />,
+    X: <SiX className="h-4 w-4 shrink-0" />,
   };
 
   return (
@@ -38,7 +38,7 @@ export function ContactSection(): React.JSX.Element {
 
             <div className="surface-subtle mt-4 rounded-lg p-3">
               <p className="flex items-center gap-2 text-sm text-foreground">
-                <CalendarClock className="h-4 w-4" />
+                <CalendarClock className="h-4 w-4 shrink-0" />
                 {portfolioConfig.contact.availability}
               </p>
             </div>
@@ -53,7 +53,7 @@ export function ContactSection(): React.JSX.Element {
                   className="surface-subtle group flex items-center justify-between rounded-lg px-3 py-2 text-foreground transition-all duration-300 hover:brightness-[1.03]"
                 >
                   <span className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
+                    <Mail className="h-4 w-4 shrink-0" />
                     {link.label}
                   </span>
                   <span className="text-xs text-muted-foreground transition-colors group-hover:text-foreground">
@@ -72,7 +72,7 @@ export function ContactSection(): React.JSX.Element {
                   rel="noreferrer"
                   className="surface-subtle inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-all duration-300 hover:text-foreground"
                 >
-                  {socialIconMap[social.label] ?? <Mail className="h-4 w-4" />}
+                  {socialIconMap[social.label] ?? <Mail className="h-4 w-4 shrink-0" />}
                   {social.label}
                 </a>
               ))}

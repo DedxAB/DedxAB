@@ -11,9 +11,9 @@ import { useTheme } from '@/components/providers/theme-provider';
 import { GlassNavbar } from '@/components/ui/glass-navbar';
 
 const iconMap: Record<string, React.JSX.Element> = {
-  GitHub: <Github className="h-4 w-4" />,
-  LinkedIn: <Linkedin className="h-4 w-4" />,
-  X: <SiX className="h-4 w-4" />,
+  GitHub: <Github className="h-4 w-4 shrink-0" />,
+  LinkedIn: <Linkedin className="h-4 w-4 shrink-0" />,
+  X: <SiX className="h-4 w-4 shrink-0" />,
 };
 
 export function TopNav(): React.JSX.Element {
@@ -176,7 +176,7 @@ export function TopNav(): React.JSX.Element {
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 className="control-button icon-control-button inline-flex items-center justify-center rounded-full text-muted-foreground hover:text-foreground"
               >
-                {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                {theme === 'dark' ? <Sun className="h-4 w-4 shrink-0" /> : <Moon className="h-4 w-4 shrink-0" />}
               </button>
             </div>
           </div>

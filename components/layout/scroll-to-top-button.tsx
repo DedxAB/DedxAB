@@ -37,7 +37,7 @@ export function ScrollToTopButton(): React.JSX.Element | null {
       aria-label="Scroll to top"
       className="control-button icon-control-button fixed bottom-6 right-6 z-50 inline-flex items-center justify-center text-muted-foreground hover:text-foreground"
     >
-      <ChevronUp className="h-4 w-4" />
+      <ChevronUp className="h-4 w-4 shrink-0" />
     </motion.button>
   );
 }

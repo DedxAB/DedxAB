@@ -194,7 +194,7 @@ export function HeroSection(): React.JSX.Element {
             {portfolioConfig.resumeUrl ? (
               <a href={portfolioConfig.resumeUrl} target="_blank" rel="noreferrer">
                 <Button variant="ghost">
-                  <FileDown className="mr-2 h-4 w-4" />
+                  <FileDown className="mr-2 h-4 w-4 shrink-0" />
                   Resume
                 </Button>
               </a>
@@ -231,8 +231,8 @@ export function HeroSection(): React.JSX.Element {
               {leftRows.map((item) => (
                 <div key={item.key} className="flex items-center gap-3">
                   <dt className="surface-subtle inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-lg text-muted-foreground">
-                    <item.icon className="h-4 w-4" />
-                  </dt>
+<item.icon className="h-4 w-4 shrink-0" />
+                      </dt>
                   <dd className="break-words font-medium text-foreground/90">
                     {item.href ? (
                       <a
@@ -254,8 +254,8 @@ export function HeroSection(): React.JSX.Element {
               {rightRows.map((item) => (
                 <div key={item.key} className="flex items-center gap-3">
                   <dt className="surface-subtle inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-lg text-muted-foreground">
-                    <item.icon className="h-4 w-4" />
-                  </dt>
+<item.icon className="h-4 w-4 shrink-0" />
+                      </dt>
                   <dd className="break-words font-medium text-foreground/90">
                     {item.href ? (
                       <a

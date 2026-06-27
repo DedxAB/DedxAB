@@ -38,7 +38,7 @@ export function InterestsSection(): React.JSX.Element {
               <Card className="group transition-all duration-300 hover:-translate-y-0.5">
                 <div className="flex items-start gap-3">
                   <span className="surface-subtle inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-foreground">
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-4 w-4 shrink-0" />
                   </span>
                   <p className="font-display text-sm leading-relaxed text-foreground">
                     {interest}

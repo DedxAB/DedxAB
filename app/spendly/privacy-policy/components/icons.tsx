@@ -4,7 +4,7 @@ type IconProps = {
   className?: string;
 };
 
-export function DatabaseIcon({ className = 'size-5' }: IconProps) {
+export function DatabaseIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -20,7 +20,7 @@ export function DatabaseIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function KeyIcon({ className = 'size-5' }: IconProps) {
+export function KeyIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -36,7 +36,7 @@ export function KeyIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function ShieldIcon({ className = 'size-5' }: IconProps) {
+export function ShieldIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ export function ShieldIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function UsersIcon({ className = 'size-5' }: IconProps) {
+export function UsersIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -71,7 +71,7 @@ export function UsersIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function GridIcon({ className = 'size-5' }: IconProps) {
+export function GridIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ export function GridIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function FileIcon({ className = 'size-5' }: IconProps) {
+export function FileIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ export function FileIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function MailIcon({ className = 'size-5' }: IconProps) {
+export function MailIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ export function MailIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function ShareIcon({ className = 'size-5' }: IconProps) {
+export function ShareIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -144,7 +144,7 @@ export function ShareIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function ChevronUpIcon({ className = 'size-5' }: IconProps) {
+export function ChevronUpIcon({ className = 'size-5 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -160,7 +160,7 @@ export function ChevronUpIcon({ className = 'size-5' }: IconProps) {
   );
 }
 
-export function ChevronDownIcon({ className = 'size-4' }: IconProps) {
+export function ChevronDownIcon({ className = 'size-4 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -176,7 +176,7 @@ export function ChevronDownIcon({ className = 'size-4' }: IconProps) {
   );
 }
 
-export function ClockIcon({ className = 'size-4' }: IconProps) {
+export function ClockIcon({ className = 'size-4 shrink-0' }: IconProps) {
   return (
     <svg
       viewBox="0 0 24 24"

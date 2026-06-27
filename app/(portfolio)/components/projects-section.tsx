@@ -48,7 +48,7 @@ export function ProjectsSection(): React.JSX.Element {
                     rel="noreferrer"
                     className="surface-subtle inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs text-foreground transition-all duration-300 hover:scale-[1.02] hover:brightness-[1.03]"
                   >
-                    <ExternalLink className="h-3.5 w-3.5" /> Live
+                    <ExternalLink className="h-3.5 w-3.5 shrink-0" /> Live
                   </a>
                   {project.repo ? (
                     <a
@@ -57,7 +57,7 @@ export function ProjectsSection(): React.JSX.Element {
                       rel="noreferrer"
                       className="surface-subtle inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs text-foreground transition-all duration-300 hover:scale-[1.02] hover:brightness-[1.03]"
                     >
-                      <Github className="h-3.5 w-3.5" /> Code
+                      <Github className="h-3.5 w-3.5 shrink-0" /> Code
                     </a>
                   ) : null}
                 </div>
@@ -82,9 +82,9 @@ export function ProjectsSection(): React.JSX.Element {
                       className="inline-flex items-center gap-1.5 text-foreground"
                     >
                       {StackIcon ? (
-                        <StackIcon className="h-3.5 w-3.5" />
+                        <StackIcon className="h-3.5 w-3.5 shrink-0" />
                       ) : (
-                        <Braces className="h-3.5 w-3.5" />
+                        <Braces className="h-3.5 w-3.5 shrink-0" />
                       )}
                       {item}
                     </Badge>

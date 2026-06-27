@@ -32,7 +32,7 @@ export function LearningsSection(): React.JSX.Element {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-2">
                     <span className="surface-subtle inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-foreground">
-                      {Icon ? <Icon className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
+                      {Icon ? <Icon className="h-4 w-4 shrink-0" /> : <Sparkles className="h-4 w-4 shrink-0" />}
                     </span>
                     <h3 className="font-display text-base text-foreground">{item.title}</h3>
                   </div>

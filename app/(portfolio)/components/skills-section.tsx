@@ -42,7 +42,7 @@ export function SkillsSection(): React.JSX.Element {
                     <li key={skill.name} className="group">
                       <span className="surface-subtle inline-flex items-center gap-2 rounded-md px-2.5 py-1.5 text-sm text-foreground transition-all duration-300 hover:brightness-[1.03]">
                         <span className="surface-subtle inline-flex h-5 min-w-5 items-center justify-center rounded px-1 text-[10px] text-muted-foreground">
-                          {Icon ? <Icon className="h-3.5 w-3.5" /> : skill.icon}
+                          {Icon ? <Icon className="h-3.5 w-3.5 shrink-0" /> : skill.icon}
                         </span>
                         <span>{skill.name}</span>
                       </span>
